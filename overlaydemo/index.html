@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>TVING KBO Overlay Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- our one global stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <!-- ─── HEADER ──────────────────────────────────────────── -->
+    <header class="tv-header">
+      <div class="tv-header-left">
+        <a href="#" class="logo-tving">TVING</a>
+        <span class="logo-kbo">KBO</span>
+        <nav class="tv-nav">
+          <a href="#">홈</a>
+          <a href="#">영상</a>
+          <a href="#">일정</a>
+          <a href="#">순위/기록</a>
+        </nav>
+      </div>
+      <div class="tv-header-right">
+        <button class="icon-btn"><img src="/glass.png" alt="검색" /></button>
+        <button class="icon-btn"><img src="/upload.jpg" alt="업로드" /></button>
+        <div class="kbo-logo-img"><img src="/kbo.png" alt="KBO 로고" /></div>
+        <div class="user-menu">사용자 이름 ▾</div>
+      </div>
+    </header>
+
+    <!-- ─── MAIN CONTENT ───────────────────────────────────── -->
+    <div class="page-body">
+      <div class="container">
+        <div class="video-area">
+          <div id="video-wrap">
+            <video
+              autoplay
+              muted
+              loop
+              controls
+              poster="/video-poster.png"
+              preload="auto"
+              style="width:100%; height:auto;"
+            >
+              <source src="/kia2.mp4" type="video/mp4" />
+              Your browser does not support HTML5 video.
+            </video>
+            <div class="video-title">
+              [키움 vs 롯데] 2025/6/3(화) 다시보기
+            </div>
+          </div>
+        </div>
+
+        <aside class="sidebar">
+          <div class="playlist-header">
+            <span>재생목록</span>
+            <span class="tab">추천 영상</span>
+          </div>
+          <ul class="video-list">
+            <li>
+              <img src="/thumbs/kiwoom-giants.png" alt="키움 vs 롯데 다시보기" />
+              <div class="info">
+                <strong>키움 vs 롯데 2025/6/3 다시보기</strong>
+                <span>02:40:53</span>
+              </div>
+            </li>
+            <li>
+              <img src="/thumbs/highlights.png" alt="하이라이트" />
+              <div class="info">
+                <strong>키움 vs 롯데 2025/6/3 하이라이트</strong>
+                <span>12:01</span>
+              </div>
+            </li>
+            <li>
+              <img src="/thumbs/rayeyes.png" alt="레이예스 주요장면" />
+              <div class="info">
+                <strong>[롯데] 2025/6/3 레이에스 주요장면</strong>
+                <span>04:41</span>
+              </div>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+
+    <!-- where our overlay React app mounts -->
+    <div id="overlay-root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
